@@ -2,7 +2,9 @@
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-company.svg';
 import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
-import darkMode from 'design-system/_sass/pm-styles/_pm-dark-theme.scss';
+import darkTheme from 'design-system/_sass/themes/dark-theme.scss';
+import monokaiTheme from 'design-system/_sass/themes/monokai-theme.scss';
+import pikachuTheme from 'design-system/_sass/themes/pikachu-theme.scss';
 
 import { c } from 'ttag';
 
@@ -18,6 +20,8 @@ export const CUSTOM_THEME = {
 export enum ThemeTypes {
     Default = 0,
     Dark = 1,
+    Monokai = 2,
+    Pikachu = 3,
 }
 
 export const PROTON_THEMES = {
@@ -35,6 +39,22 @@ export const PROTON_THEMES = {
         },
         identifier: ThemeTypes.Dark,
         src: themeDarkmodeSvg,
-        theme: darkMode.toString(),
+        theme: darkTheme.toString(),
+    },
+    MONOKAI: {
+        getI18NLabel() {
+            return c('Theme').t`Dark mode`;
+        },
+        identifier: ThemeTypes.Dark,
+        src: null,
+        theme: monokaiTheme.toString(),
+    },
+    PIKACHU: {
+        getI18NLabel() {
+            return c('Theme').t`Pikachu`;
+        },
+        identifier: ThemeTypes.Pikachu,
+        src: null,
+        theme: pikachuTheme.toString(),
     },
 } as const;
