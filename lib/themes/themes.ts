@@ -2,9 +2,10 @@
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-company.svg';
 import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
-import darkTheme from 'design-system/_sass/themes/dark-theme.scss';
-import monokaiTheme from 'design-system/_sass/themes/monokai-theme.scss';
-import pikachuTheme from 'design-system/_sass/themes/pikachu-theme.scss';
+import defaultTheme from 'design-system/scss/themes/default-theme.scss';
+import darkTheme from 'design-system/scss/themes/dark-theme.scss';
+import monokaiTheme from 'design-system/scss/themes/monokai-theme.scss';
+import pikachuTheme from 'design-system/scss/themes/pikachu-theme.scss';
 
 import { c } from 'ttag';
 
@@ -27,15 +28,15 @@ export enum ThemeTypes {
 export const PROTON_THEMES = {
     DEFAULT: {
         getI18NLabel() {
-            return c('Theme').t`Default mode`;
+            return c('Theme').t`Default`;
         },
         identifier: ThemeTypes.Default,
         src: themeDarkSvg,
-        theme: '',
+        theme: defaultTheme.toString(),
     },
     DARK: {
         getI18NLabel() {
-            return c('Theme').t`Dark mode`;
+            return c('Theme').t`Dark`;
         },
         identifier: ThemeTypes.Dark,
         src: themeDarkmodeSvg,
@@ -43,9 +44,9 @@ export const PROTON_THEMES = {
     },
     MONOKAI: {
         getI18NLabel() {
-            return c('Theme').t`Dark mode`;
+            return c('Theme').t`Monokai`;
         },
-        identifier: ThemeTypes.Dark,
+        identifier: ThemeTypes.Monokai,
         src: null,
         theme: monokaiTheme.toString(),
     },
