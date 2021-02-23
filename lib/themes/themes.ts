@@ -19,8 +19,6 @@ export const CUSTOM_THEME = {
 export enum ThemeTypes {
     Default = 0,
     Dark = 1,
-    Monokai = 2,
-    Pikachu = 3,
 }
 
 export const PROTON_THEMES = {
